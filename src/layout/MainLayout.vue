@@ -8,8 +8,9 @@
       </nav>
     </header>
     
-    
+    <transition name="fade" appear>
     <slot></slot>
+    </transition>
 
   </div>
 </template>
@@ -36,5 +37,11 @@ export default {
         text-decoration: none
         padding: 10px 
         display: inline-block
-        
+.fade-enter-active, .fade-leave-active
+  transition-property: opacity
+  transition-duration: .25s
+.fade-enter-active
+  transition-delay: .25s
+.fade-enter, .fade-leave-active
+  opacity: 0
 </style>
